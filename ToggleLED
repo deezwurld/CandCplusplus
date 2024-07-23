@@ -1,0 +1,18 @@
+Function: toggleLed()
+Description: Toggle the state of one or both LEDs.
+Notes: This function is specific to Arcom's Target188EB board. 
+returns: none defined. 
+
+void
+toggleLed(unsigned char ledMask)
+{
+   asm{
+     mov dx, P2LTCH /*LOAD THE REGISTER ADDRESS*/
+     in al, dx /* Read register contents*/
+
+     mov ah, ledMask /*move the ledMask into register*/
+     xor al, ah /*toggle the requested bits*/
+
+     out dx, al  /*Write new register contents*/
+      };
+} /*toggleLed() */
