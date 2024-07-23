@@ -1,0 +1,12 @@
+Function: delay()
+Description: Busy-wait for number of milliseconds.
+Notes: Was determined by trial n error. Value is determined by processor speed/type.
+Returns: None defined 
+
+void
+delay(unsigned int nMilliseconds)
+{
+   #define CYCLES_PER_MS 260 /* Number of decrement-and-test cycles. */
+   unsigned long nCycles = nMilliseconds * CYCLES_PER_MS;
+   while (nCycles--);
+} /* delay() */
