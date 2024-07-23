@@ -1,0 +1,9 @@
+void 
+main(void)
+{
+  while(1)
+   {
+     toggleLed(LED_GREEN);
+     delay(500)
+   }
+/* main()*/
